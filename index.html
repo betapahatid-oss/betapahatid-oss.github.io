@@ -3,109 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Saya</title>
-  <style>
-    /* ==== STYLE CSS ==== */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #0077cc;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background: #005fa3;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #0077cc;
-      color: white;
-      margin-top: 30px;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-  </style>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Tombol CS Animasi -->
+    <button id="openCs" class="open-cs-btn">
+        <img src="img/icon/cs1.svg" alt="CS" class="cs-icon"> CS
+    </button>
 
-  <header>
-    <h1>Selamat Datang di Website Saya</h1>
-    <p>Portfolio | Proyek | Kontak</p>
+    <!-- Pop-up CS -->
+    <div class="cs-popup" id="csPopup">
+        <div class="cs-header">
+            <span>CS Online</span>
+            <button id="closeCs">&times;</button>
+        </div>
+        <div class="cs-body">
+            <p>Halo! Ada yang bisa kami bantu?</p>
+            <a href="https://wa.me/6282273584578" target="_blank" class="cs-btn">WhatsApp</a>
+            <a href="https://t.me/username" target="_blank" class="cs-btn telegram">Telegram</a>
+            <a href="betapahatid@gmail.com" target="_blank" class="cs-btn email">Email</a>
+        </div>
+    </div>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="logo">My Portfolio</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-toggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#proyek">Proyek</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <h1><span class="typing" id="typing"></span></h1>
+      <h2>I create <span class="highlight">modern</span> and <span class="highlight">efficient</span> solutions</h2>
+      <p>
+        I am an IT professional with a passion for developing innovative programs 
+        that expedite the efficiency and effectiveness of organizational success.
+      </p>
+      <button class="btn-outline" onclick="scrollToProjects()">View My Work</button>
+    </div>
+    <div class="hero-right">
+      <img src="img/profil/pasphoto1.jpg" alt="Foto Profil">
+    </div>
+  </section>
 
-  <div class="container">
-    <section id="tentang" class="card">
-      <h2>Tentang Saya</h2>
-      <p>Saya seorang mahasiswa/tamatan IT yang suka membuat website dan aplikasi.</p>
-      <img src="https://drive.google.com/uc?export=view&id=FILE_ID_GAMBAR" alt="Foto Profil">
-    </section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h3>About Me</h3>
+    <p>Hello! I’m an IT enthusiast who loves coding, problem solving, and building innovative solutions.</p>
+  </section>
 
-    <section id="proyek" class="card">
-      <h2>Proyek</h2>
-      <p>Berikut adalah beberapa proyek yang pernah saya buat:</p>
-      <ul>
-        <li>Website Portfolio</li>
-        <li>Aplikasi Mobile Sederhana</li>
-        <li>Database Sistem Informasi</li>
-      </ul>
-    </section>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h3>My Projects</h3>
+    <div class="project-grid">
+      <div class="project-card">
+        <i class="fa-solid fa-code"></i>
+        <h4>Web Development</h4>
+        <p>Responsive and modern websites.</p>
+      </div>
+      <div class="project-card">
+        <i class="fa-solid fa-database"></i>
+        <h4>Database</h4>
+        <p>Efficient database systems.</p>
+      </div>
+      <div class="project-card">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h4>Mobile Apps</h4>
+        <p>User-friendly mobile applications.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="kontak" class="card">
-      <h2>Kontak</h2>
-      <p>Email: kamu@email.com</p>
-      <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
-    </section>
-  </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h3>Contact Me</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="6" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane"></i><img src="img/icon/send.svg" height="24"></button>
+    </form>
+  </section>
+ <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Alamat -->
+      <div class="footer-item">
+        <h3>Alamat</h3>
+        <p>Kav. Bukit seroja bloj dd2 no 11<br>Batam, Indonesia</p>
+      </div>
 
-  <footer>
-    <p>© 2025 Portfolio Saya - Dibuat dengan ❤️ di GitHub Pages</p>
+      <!-- Kontak -->
+      <div class="footer-item">
+        <h3>Kontak</h3>
+        <p><strong>WhatsApp:</strong> 
+          <a href="https://wa.me/6282273584578" target="_blank">+62 822-735-845-78</a>
+        </p>
+        <p><strong>Email:</strong> 
+          <a href="betaoahatid@gmail.com">betapahatid@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Sosial Media -->
+      <div class="footer-item">
+        <h3>Ikuti Kami</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Porfolio Me</p>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
