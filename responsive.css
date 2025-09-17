@@ -1,0 +1,16 @@
+@media (max-width: 900px) {
+  .hero { flex-direction:column; text-align:center; }
+  .hero-right img { width:200px; height:200px; }
+  .nav-links {
+    position:fixed; top:70px; right:-100%;
+    flex-direction:column; background:var(--surface);
+    width:200px; height:100vh; padding:20px;
+    transition: right 0.3s ease;
+  }
+  .nav-links.active { right:0; }
+  .hamburger { display:flex; }
+  .hamburger.active span:nth-child(1) { transform:rotate(45deg) translateY(8px); }
+  .hamburger.active span:nth-child(2) { opacity:0; }
+  .hamburger.active span:nth-child(3) { transform:rotate(-45deg) translateY(-8px); }
+}
+
