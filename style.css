@@ -321,3 +321,16 @@ body.dark {
     .open-cs-btn { padding: 10px 14px; font-size: 14px; }
     .cs-btn { padding: 8px; font-size: 13px; }
 }
+.profil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profil img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  justify-content: center;
+}
