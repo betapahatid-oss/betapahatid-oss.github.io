@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontak Saya</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: white;
+    }
+
+    header {
+      background: white-silver;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      resize: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      background: #25d366; /* warna hijau khas WhatsApp */
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #128c7e;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+  
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html"><img src="img/icon/home1.svg" width="80" height="20">
+      </a>
+      <a href="gallery.html"><img src="img/icon/project1.svg" width="80" height="20"></a>
+      <a href="contact.html"><img src="img/icon/contact1.svg" width="80" height="20"></a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Hubungi Saya Lewat WhatsApp</h2>
+
+    <!-- Form Kontak -->
+    <form onsubmit="sendWhatsApp(event)">
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="pesan">Pesan</label>
+      <textarea id="pesan" name="pesan" rows="5" required></textarea>
+
+      <button type="submit">Kirim ke WhatsApp</button>
+    </form>
+
+    <!-- Info Kontak -->
+    <div class="contact-info">
+      <h3>Info Kontak</h3>
+      <p>📞 WhatsApp: <a href="https://wa.me/6282273584578" target="_blank">+62 82273584578</a></p>
+      <p>📧 Email: <a href="email:betapahatid@gmail.com">betapahatid@gmail.com</a></p>
+    </div>
+  </main>
+
+  <script>
+    function sendWhatsApp(e) {
+      e.preventDefault(); // cegah reload halaman
+
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const pesan = document.getElementById("pesan").value;
+
+      const phone = "6282273584578"; // Ganti dengan nomor WA kamu
+      const text = `Halo, saya *${nama}* (${email}).%0A%0A${pesan}`;
+      const url = `https://wa.me/${phone}?text=${text}`;
+
+      // Popup konfirmasi
+      const confirmSend = confirm("Apakah kamu yakin ingin mengirim pesan lewat WhatsApp?");
+      if (confirmSend) {
+        window.open(url, "_blank"); // buka WA jika pilih OK
+      } else {
+        alert("Pesan dibatalkan.");
+      }
+    }
+  </script>
+</body>
+</html>
