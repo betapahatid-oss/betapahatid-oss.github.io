@@ -39,7 +39,7 @@ hamburger.addEventListener("click", () => {
 
 // Typing effect
 const typingEl = document.getElementById("typing");
-const words = ["IT Professional", "Web Developer", "Database Designer", "Mobile App Creator"];
+const words = ["Microsoft Officer", "Mengolah Data entry", "Eletricall", "Plumbing"];
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
@@ -61,29 +61,17 @@ function typeEffect() {
   setTimeout(typeEffect, isDeleting ? 80 : 120);
 }
 typeEffect();
-const csPopup = document.getElementById('csPopup');
-const openBtn = document.getElementById('openCs');
-const closeBtn = document.getElementById('closeCs');
-
-// Tombol buka
-openBtn.addEventListener('click', () => {
-    csPopup.classList.add('show');
-    openBtn.style.display = 'none';
-});
-
-// Tombol tutup
-closeBtn.addEventListener('click', () => {
-    csPopup.classList.remove('show');
-    openBtn.style.display = 'flex';
-});
-
-// Pop-up otomatis muncul setelah 5 detik
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        csPopup.classList.add('show');
-        openBtn.style.display = 'none';
-    }, 10000);
-});
-// Saat ini belum ada interaksi khusus di footer
 // Bisa dipakai nanti untuk animasi tambahan
 console.log("Footer aktif 🚀");
+// sidebar //
+    const sidebar = document.getElementById('sidebar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+    });
