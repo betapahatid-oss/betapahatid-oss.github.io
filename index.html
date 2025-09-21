@@ -3,42 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Tombol CS Animasi -->
-    <button id="openCs" class="open-cs-btn">
-        <img src="cs1.svg" alt="CS" class="cs-icon"> CS
-    </button>
-
-    <!-- Pop-up CS -->
-    <div class="cs-popup" id="csPopup">
-        <div class="cs-header">
-            <span>CS Online</span>
-            <button id="closeCs">&times;</button>
-        </div>
-        <div class="cs-body">
-            <p>Halo! Ada yang bisa kami bantu?</p>
-            <a href="https://wa.me/6282273584578" target="_blank" class="cs-btn">WhatsApp</a>
-            <a href="https://t.me/username" target="_blank" class="cs-btn telegram">Telegram</a>
-            <a href="betapahatid@gmail.com" target="_blank" class="cs-btn email">Email</a>
-        </div>
-    </div>
   <!-- HEADER -->
   <header id="header">
-    <div class="logo">My Portfolio</div>
+    <div class="logo">Porfolio</div>
+     <div class="search-container" id="searchBox">
+      <span onclick="toggleSearch()" class="fas fa-search"></span>
+      <input type="text" class="search-input" id="searchInput" placeholder="">
+    </div
+     <!-- Panggil JS -->
+  <script src="search.js"></script>
     <nav class="nav-links" id="nav-links">
        <div class="profil">
       <img src="pasphoto1.jpg" alt="Foto Profil">
-    </div>
-      <p>BETAPA HATI DUHA</p>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+         <ul><i>Betapa Hati Duha</i></ul> 
+         
+       </div>
+     <hr>
+      <ul>
+        <li class="jarak"><a href="index.html"><i class="fas fa-home" style="margin-right:30px;"></i>Home</a></li>
+        <li class="jarak"><a href="gallery.html"><i class="fas fa-folder-open" style="margin-right:30px;"></i>Gallery</a></li>
+        <li class="jarak"><a href="contact.html"><i class="fas fa-phone" style="margin-right:30px;"></i>Contact</a></li>
+      </ul>
     </nav>
     <div class="nav-actions">
       <button id="theme-toggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
@@ -52,10 +43,9 @@
   <section class="hero" id="home">
     <div class="hero-left">
       <h1><span class="typing" id="typing"></span></h1>
-      <h2>I create <span class="highlight">modern</span> and <span class="highlight">efficient</span> solutions</h2>
+      <h2>Guarantee <span class="highlight">education</span> and <span class="highlight">efficient</span> solutions</h2>
       <p>
-        I am an IT professional with a passion for developing innovative programs 
-        that expedite the efficiency and effectiveness of organizational success.
+        Saya Lulusan S1 Teknik Informatika dan memiliki keahlian di bidang electrical (instalasi dan perawatan sistem kelistrikan), plumbing (pemasangan dan perbaikan saluran air), serta Microsoft Office untuk kebutuhan administrasi, laporan, dan presentasi. Selain itu, saya juga terampil dalam editing desain menggunakan Canva Pro untuk membuat konten visual yang estetik dan profesional.
       </p>
       <button class="btn-outline" onclick="scrollToProjects()">View My Work</button>
     </div>
@@ -67,41 +57,32 @@
   <!-- ABOUT -->
   <section id="about">
     <h3>About Me</h3>
-    <p>Hello! I’m an IT enthusiast who loves coding, problem solving, and building innovative solutions.</p>
+    <p>Seorang pribadi yang aktif, pekerja keras, dan bertanggung jawab. Bersemangat untuk terus belajar dan berkembang. Memiliki kemampuan bekerja dalam tim dan mampu beradaptasi dengan perubahan. Bersemangat untuk berkontribusi pada kesuksesan perusahaan Anda</p>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <h3>My Projects</h3>
+    <h3>Projects</h3>
     <div class="project-grid">
       <div class="project-card">
-        <i class="fa-solid fa-code"></i>
-        <h4>Web Development</h4>
-        <p>Responsive and modern websites.</p>
+        <i class="fa-solid fa-bolt"></i>
+        <h2>Eletrical</h2>
+        <p>maintance Eletrical Instal</p>
       </div>
       <div class="project-card">
-        <i class="fa-solid fa-database"></i>
-        <h4>Database</h4>
-        <p>Efficient database systems.</p>
+        <i class="fa-solid fa-wrench"></i>
+        <h2>Plumbing</h2>
+        <p>Installing</p>
       </div>
       <div class="project-card">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <h4>Mobile Apps</h4>
-        <p>User-friendly mobile applications.</p>
+        <i class="fab fa-microsoft"></i>
+        <h2>Microsoft Office</h2>
+        <p>laporan, mengolah data,document</p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <h3>Contact Me</h3>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="6" placeholder="Your Message"></textarea>
-      <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane"></i><img src="send.svg" height="24"></button>
-    </form>
-  </section>
  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
